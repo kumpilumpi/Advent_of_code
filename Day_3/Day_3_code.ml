@@ -1,5 +1,5 @@
 
-let test = ["..##......."; (* ->  *)
+let test = ["..##......."; (* -> 7, 336 *)
             "#...#...#..";
             ".#....#..#.";
             "..#.#...#.#";
@@ -27,9 +27,27 @@ let naloga1 sez premik =
 
 (* Naloga2 *)
 
-let naloga2 sez indeksi = 
-  let 
+let indeksi = [(1,1);(3,1);(5,1);(1,2); (7,1) ] (* *)
 
+let naloga2 sez indeksi = 
+  let izberi_vrste sez x = 
+    let rec aux2 acc n sez vrstica =
+      match sez with
+      |glava :: rep -> if n = 0 then aux2 (acc @ [glava]) vrstica rep vrstica else aux2 acc (n-1) rep vrstica
+      | [] -> acc
+    in
+    aux2 [] 0 sez (x - 1)
+  in
+  let rec aux acc sez indeksi = 
+    match indeksi with
+    | (x, 1) :: xs -> aux (acc * (naloga1 sez x)) sez xs
+    | (x, y) :: xs -> aux (acc * (naloga1 (izberi_vrste sez y) x)) sez xs
+    | _ -> acc
+  in
+  aux 1 sez indeksi
+
+
+(* let test2 = naloga2 test indeksi *)
 
 
 let _ =
@@ -45,9 +63,9 @@ let _ =
   in
   let seznam vsebina_datoteke = String.split_on_char '\n' vsebina_datoteke
   in
-  let vsebina_datoteke = preberi_datoteko "Day_3/Day_3.in" in
-  let odgovor1 = naloga1 (seznam (vsebina_datoteke)) 3
-  (*and odgovor2 = naloga2 vsebina_datoteke *)
+  let vsebina_datoteke = seznam (preberi_datoteko "Day_3/Day_3.in") in
+  let odgovor1 = naloga1 vsebina_datoteke 3
+  and odgovor2 = naloga2 vsebina_datoteke indeksi
   in
   izpisi_datoteko "Day_3/Day_3_1.out" (string_of_int odgovor1);
-  (* izpisi_datoteko "day_0_2.out" odgovor2 *)
+  izpisi_datoteko "Day_3/Day_3_2.out" (string_of_int odgovor2)
