@@ -49,6 +49,40 @@ let naloga1 sez =
   (abs x) + (abs y)
 
 
+let test2 = [('F', 10);('N',3);('F',7);('R', 90);('F', 11)]
+
+let naloga2 sez =
+  let sprememba_w input waypoint = (*waypoint = (ew, ns)*)
+    let rotacija (smer, kot) waypoint =
+      let obratov (smer, kot) = if smer = 'L' then kot / 90 else (360 - kot) / 90 in
+      let n = obratov (smer, kot) in
+      let obrat90 (x,y) = (-y, x) in
+      let rec n_obrat n (x,y) = if n = 0 then (x,y) else n_obrat (n-1) (obrat90 (x,y)) in
+      n_obrat n waypoint
+    in
+    let (crka, stevilka) = input in
+    let (x, y) = waypoint in
+    if crka = 'L' || crka = 'R' then rotacija input waypoint else
+    if crka = 'W' then (x - stevilka, y) else 
+    if crka = 'E' then (x + stevilka, y) else
+    if crka = 'N' then (x, y + stevilka) else
+    if crka = 'S' then (x, y - stevilka) else
+    failwith "If napaka"
+  in
+  let uporabi n (x,y) (a,b) = (n * x + a, n * y + b) in
+  let rec ukaz2 waypoint koordinate = function
+    | [] -> koordinate
+    |glava :: rep -> (
+      let (crka, stevilka) = glava in
+      if crka = 'F' then (ukaz2 waypoint (uporabi stevilka waypoint koordinate) rep)
+      else
+      ukaz2 (sprememba_w glava waypoint) koordinate rep
+    )
+  in
+  let (x, y) = ukaz2 (10, 1) (0,0) sez in
+  let abs x = if x >= 0 then x else -1 * x in
+  (abs x) + (abs y)
+
 
 (*-------------izpis---------------*)
 
@@ -61,7 +95,7 @@ let _ =
   let podatki = uredi_podatke ("Day_12/12.in")
   in
   let odgovor1 = naloga1 podatki
-  (* and odgovor2 = naloga2 podatki *)
+  and odgovor2 = naloga2 podatki
   in
   izpisi_datoteko "Day_12/12_1.out" (string_of_int odgovor1);
-  (* izpisi_datoteko "Day_6/6_2.out" (string_of_int odgovor2) *)
+  izpisi_datoteko "Day_12/12_2.out" (string_of_int odgovor2)
