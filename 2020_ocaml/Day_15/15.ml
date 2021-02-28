@@ -37,7 +37,7 @@ let naloga1 sez n =
         close_out chan
     in
     let odgovor1 = naloga1 podatki1 2020
-    (* and odgovor2 = naloga2 podatki *)
+    and odgovor2 = naloga1 podatki1 30000000
     in
     izpisi_datoteko "Day_15/15_1.out" (string_of_int odgovor1);
-    (* izpisi_datoteko "Day_12/12_2.out" (string_of_int odgovor2) *)
+    izpisi_datoteko "Day_15/15_2.out" (string_of_int odgovor2) 
