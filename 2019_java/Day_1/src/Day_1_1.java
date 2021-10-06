@@ -25,7 +25,7 @@ public class Day_1_1 {
 		
 	}
 	public static int naloga1(int input) {
-		return (input / 3) - 2 ;		
+		return (input / 3) - 2 ;
 	}
 
 }
