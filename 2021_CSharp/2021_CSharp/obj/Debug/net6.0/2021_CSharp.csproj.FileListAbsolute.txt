@@ -1,0 +1,15 @@
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\bin\Debug\net6.0\2021_CSharp.exe
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\bin\Debug\net6.0\2021_CSharp.deps.json
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\bin\Debug\net6.0\2021_CSharp.runtimeconfig.json
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\bin\Debug\net6.0\2021_CSharp.dll
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\bin\Debug\net6.0\2021_CSharp.pdb
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\obj\Debug\net6.0\2021_CSharp.csproj.AssemblyReference.cache
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\obj\Debug\net6.0\2021_CSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\obj\Debug\net6.0\2021_CSharp.AssemblyInfoInputs.cache
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\obj\Debug\net6.0\2021_CSharp.AssemblyInfo.cs
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\obj\Debug\net6.0\2021_CSharp.csproj.CoreCompileInputs.cache
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\obj\Debug\net6.0\2021_CSharp.dll
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\obj\Debug\net6.0\refint\2021_CSharp.dll
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\obj\Debug\net6.0\2021_CSharp.pdb
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\obj\Debug\net6.0\2021_CSharp.genruntimeconfig.cache
+C:\Users\jakak\Desktop\Git\Advent_of_code\2021_CSharp\2021_CSharp\obj\Debug\net6.0\ref\2021_CSharp.dll
