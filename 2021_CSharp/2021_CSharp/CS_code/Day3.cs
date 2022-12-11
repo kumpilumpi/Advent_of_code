@@ -83,20 +83,25 @@ namespace _2021_CSharp.CS_code
 
                 clonedList.RemoveAll(s => (s[i] == this.regressive));
             }
-            var oxygen = Convert.ToInt32(clonedList[0], 2);
+            var oxygen = Convert.ToInt32(clonedList[0], 2); // To je ok -> bug je naprej
 
 
             List<string> clonedList2 = new List<string>(strings);
+            digits = new int[length];
             clonedList2.RemoveAll(s => (s[0] == clonedList[0][0]));
 
             for (int i = 1; i < length; i++)
             {
+                if(clonedList2.Count == 1) { 
+                    break;
+                }
+
                 foreach (string line in clonedList2)
                 {
                     digits[i] += int.Parse(line[i].ToString());
                 }
 
-                if (digits[i] * 2 > (clonedList.Count))
+                if (digits[i] * 2 >= (clonedList2.Count))
                 {
                     this.dominant = '1';
                 }
@@ -105,9 +110,9 @@ namespace _2021_CSharp.CS_code
                     this.dominant = '0';
                 }
 
-                clonedList.RemoveAll(s => (s[i] == this.dominant));
+                clonedList2.RemoveAll(s => (s[i] == this.dominant));
             }
-            var co2 = Convert.ToInt32(clonedList2[0], 2); ;
+            var co2 = Convert.ToInt32(clonedList2[0], 2);
 
             var answer = oxygen * co2;
             return answer.ToString();
